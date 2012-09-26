@@ -1,0 +1,254 @@
+@import 'variables'
+@import 'nib'
+@import 'buttons'
+
+
+body
+  font: $baseFontSize $sansFontFamily
+  background-image url('/background1.png')
+  margin 0
+  padding 0
+  padding-bottom 75px
+
+a
+  color: $blue
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+p
+  color: $blackLighter
+
+hr
+  width 100%
+  margin 30px 0px 20px 0px
+
+h1
+a.brand
+  color #020D81
+  display block
+  margin-top 30px
+  font: 20px $headingFont
+
+h2
+  color: $blue
+  font: 100 25px $headingFont
+  margin 0px
+
+h3
+  color: $blue
+  font: $baseFontSize $headingFont
+  font-weight: 600
+
+ul
+  list-style-type none
+  text-align center
+  padding-left 0px
+
+ul li
+  display inline
+
+.navbar
+  // original - background linear-gradient(#C2C1AF, #B8B7A8)
+  // alternative C2C1AF, E4E3D2
+  
+.navbar-fixed-bottom
+  fixed bottom right
+  left 0px
+  background rgba(0,0,0,.30)
+
+#sub-header
+  background-image url('/shattered.png')
+  border-bottom 1px solid rgba(255,255,255,0.7)
+  box-shadow inset 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.1)
+  & ul
+    margin 0px
+
+#header
+  text-align center
+  padding-top 0px
+
+#header-fixed
+  box-shadow inset 0 -1px 1px rgba(255, 255, 255, 0.4),0 1px 1px rgba(0, 0, 0, 0.4)
+  // background linear-gradient(#333, #111)
+  // background linear-gradient(#C2C1AF, #B8B7A8)
+  border-bottom 1px solid #bbb
+
+#header-fixed ul.nav
+  float right
+  margin 70px 0px 20px 12px
+
+#header-fixed a.brand
+  margin-top 16px
+  color $blue
+  display block
+  float left
+  font 900 18px "Helvetica Neue", Helvetica, Arial, sans-serif
+
+.nav
+  margin 40px 0px 20px 0px
+
+.nav li
+  padding 0px 18px 0px 18px
+  &:last-child
+    padding 0px 0px 0px 12px
+
+.divider-veritical
+  color #ddd
+
+.nav a
+  font $baseFontSize $headingFont
+  background transparent
+  color #555
+  font-weight 500
+  border-radius 3px
+  padding 5px 7px 5px 7px
+  text-align center
+  text-shadow 0px 1px 1px rgba(255,255,255, 0.50)
+  transition background 0.3s
+  &:hover
+    background #eee
+    text-decoration none
+  // -webkit-font-smoothing: antialiased !important;
+
+#slider
+  background white
+
+#slider img
+  float left
+
+#slider h3
+  margin-top 30px
+
+#main
+  margin-top 25px
+
+#main .content
+  background whitesmoke
+  border-radius 5px
+  position relative
+
+.arrow-right
+  width 0
+  height 0
+  border-top 10px solid transparent
+  border-bottom 10px solid transparent
+  border-left 10px solid whitesmoke
+  &.one
+    absolute top 140px right -10px
+  &.two
+    absolute top 240px right -10px
+  &.three
+    absolute top 370px right -10px
+
+
+#prod-objects
+  margin-top 20px
+
+.prod
+.prod img
+  border-radius $borderRadius
+
+.prod
+  -webkit-transform scale(0.85)
+  -webkit-transform-style preserve-3d
+  -webkit-transition -webkit-transform 0.17s linear
+  -webkit-backface-visibility hidden
+  margin-top 18px
+  margin-bottom 18px
+  padding 7px
+  background rgba(255,255,255,0.7)
+  &:hover
+    -webkit-transform scale(1)
+  &.active
+    transform scale(1)
+    & img
+      opacity 1
+
+.prod img
+  opacity 1
+  transition opacity 1s
+  max-width 100%
+  &:hover
+    opacity 1
+
+
+.tools
+  // border 3px solid $green
+  border-radius 5px
+  width 134px
+  margin-bottom 15px
+  // background whitesmoke
+
+ul.toollist
+  margin 2px 0px 2px 0px
+
+ul.toollist li
+  display block
+  margin 0
+  padding 3px
+  width 100%
+  text-align left
+  &:hover
+    background rgba(0,0,0,.10)
+
+ul.toollist li a
+  display inline-block
+  margin-left 5px
+
+
+.label
+  margin 2px
+  padding-top 4px
+  font 700 11px "HelveticaNeue-Light" 
+  color #666
+
+// For Discovery Object Pages
+
+.navbar-fixed-top
+  fixed top left
+  right 0
+  z-index 1000
+
+ul.prod-nav
+  text-align left
+  margin-top 10px
+
+  & li
+    padding 5px
+
+  & a
+    text-shadow none
+    display inline-block
+    padding 1px 5px 1px 5px
+    border-radius 4px
+    &:hover
+      background #ddd
+      text-decoration none
+    &.current
+      cursor default
+      background #ddd
+      &:hover
+        text-decoration none
+
+  & li:first-child
+    padding-left 0px
+
+a.active
+  background #B9CDCB
+  border-radius 3px
+  // box-shadow inset 1px 1px 1px rgba(0,0,0,.30), 1px 1px 1px rgba(255,255,255,0.3)
+  pointer-events none
+  cursor default
+
+.image
+  margin-top 12px
+  padding 5px
+  border 1px solid #aaa
+  border-radius 3px
+  & img
+    border-radius 3px
+
+img.logo
+  margin 15px
+  margin-left 0px

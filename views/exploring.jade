@@ -1,0 +1,19 @@
+extends layout
+
+block append styles
+  link(href='/stylesheets/hero.css', rel='stylesheet')
+
+block content
+  a(href='/exploring')
+    h2 Exploring Archives
+  div.btn-group(data-toggle='buttons-radio')
+    a.btn(href='/exploring/whatis') What is an Archive?
+    a.btn Archival Protocols
+    a.btn Archival Documents
+    a.btn Research Guides
+    a.btn Physical Archives
+    a.btn Online Resources
+
+  block archives
+    p Welcome to the Discovery Object, Exploring Archives on Eugenics on Western Canada , where you can learn how to go about exploring both current physical and digital archives, all relating to or containing content related to Eugenics and its role in Western Canada.
+    p You can take a journey, teaching you how to access records of original materials that exist in Western Canada, including: the history of eugenics, sexual sterilization, institutionalization, and mental deficiency. Using detailed examples, we also provide you with research guides that teach you how to use archival documents on eugenics.

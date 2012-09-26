@@ -1,0 +1,15 @@
+#flipcard-toolbar {
+  height: 30px;
+  padding-bottom: 8px;
+}
+#flipcard-search {
+  margin: 5px;
+  float: right;
+  border: 1px solid #bbb;
+}
+#flipcard-detail {
+  padding: 10px;
+}
+div.toolbar {
+  float: right;
+}
