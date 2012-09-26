@@ -48,14 +48,6 @@ ul
 ul li
   display inline
 
-.navbar
-  // original - background linear-gradient(#C2C1AF, #B8B7A8)
-  // alternative C2C1AF, E4E3D2
-  
-.navbar-fixed-bottom
-  fixed bottom right
-  left 0px
-  background rgba(0,0,0,.30)
 
 #sub-header
   background-image url('/shattered.png')
@@ -70,13 +62,11 @@ ul li
 
 #header-fixed
   box-shadow inset 0 -1px 1px rgba(255, 255, 255, 0.4),0 1px 1px rgba(0, 0, 0, 0.4)
-  // background linear-gradient(#333, #111)
-  // background linear-gradient(#C2C1AF, #B8B7A8)
   border-bottom 1px solid #bbb
+  padding 20px
 
 #header-fixed ul.nav
-  float right
-  margin 70px 0px 20px 12px
+  margin 25px 0px 0px 12px
 
 #header-fixed a.brand
   margin-top 16px
@@ -109,7 +99,6 @@ ul li
   &:hover
     background #eee
     text-decoration none
-  // -webkit-font-smoothing: antialiased !important;
 
 #slider
   background white
@@ -121,25 +110,12 @@ ul li
   margin-top 30px
 
 #main
-  margin-top 25px
+  margin-top 30px
 
 #main .content
   background whitesmoke
   border-radius 5px
   position relative
-
-.arrow-right
-  width 0
-  height 0
-  border-top 10px solid transparent
-  border-bottom 10px solid transparent
-  border-left 10px solid whitesmoke
-  &.one
-    absolute top 140px right -10px
-  &.two
-    absolute top 240px right -10px
-  &.three
-    absolute top 370px right -10px
 
 
 #prod-objects
@@ -166,8 +142,8 @@ ul li
       opacity 1
 
 .prod img
-  opacity 1
-  transition opacity 1s
+  // opacity 1
+  // transition opacity 1s
   max-width 100%
   &:hover
     opacity 1
@@ -235,7 +211,7 @@ ul.prod-nav
     padding-left 0px
 
 a.active
-  background #B9CDCB
+  background whitesmoke
   border-radius 3px
   // box-shadow inset 1px 1px 1px rgba(0,0,0,.30), 1px 1px 1px rgba(255,255,255,0.3)
   pointer-events none
@@ -250,5 +226,17 @@ a.active
     border-radius 3px
 
 img.logo
-  margin 15px
-  margin-left 0px
+  display block
+  margin-top 25px
+  height 70px
+  margin-left 350px
+  margin-bottom 60px
+
+.gridster ul li
+  display block
+  position absolute
+  background whitesmoke
+  border-radius $borderRadius
+
+// #shelf
+//   background-image url('/shattered.png')
