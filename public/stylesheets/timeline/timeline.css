@@ -34,10 +34,6 @@ legend {
 	background-color: blue;
 }
 
-#header {
-	height: 40px;
-}
-
 div.header-info {
 	width:  400px;
 	background-color: #ffffff;
@@ -334,7 +330,7 @@ span.caption {
 }
 
 .slider-date {
-	top:  6px;
+	top:  2px;
 	color:  white;
 	padding-left:  1px;
 	font-size:  .8em;

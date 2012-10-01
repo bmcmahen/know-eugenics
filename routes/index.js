@@ -1,4 +1,11 @@
 
+/**
+ * Main
+ */
+
+exports.artistic = function(req, res){
+  res.render('artistic');
+}
 /*
  *  discovery objects
  */

@@ -1,0 +1,57 @@
+//- Universal to the entire site. 
+
+doctype 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Eugenics in Western Canada
+    
+    block styles
+      link(href='/stylesheets/style.css', rel='stylesheet')
+      link(href='/stylesheets/bootstrap.css', rel='stylesheet')
+
+    block scripts
+      script(src='/javascripts/jquery.min.js')
+      script(src='/javascripts/bootstrap.js')
+      script(src='/javascripts/underscore.js')
+
+  body
+    block header
+      header#header
+        .navbar.navbar-fixed-top
+          .navbar-inner
+            .container
+              a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              a.brand Eugenics Archives
+              .nav-collapse
+                ul.nav(role='navigation')
+                  li.divider-vertical
+                  li
+                    a(href='#') Resources
+                  li.divider-vertical
+                  li
+                    a.active(href='#') Discovery Objects
+                  li.divider-vertical
+                  li
+                    a(href='artistic-visions') Artistic Visions
+                  li.divider-vertical
+                  li
+                    a(href='http://whatsortsofpeople.wordpress.com/') What Sorts Blog
+                  li.divider-vertical
+                  li
+                    a(href='http://eugenicsarchive.ca/') About Us
+                  li.divider-vertical
+
+    block subheader
+       
+    section#main(role='main')
+      .container
+
+        block content
+
+        block templates
+          

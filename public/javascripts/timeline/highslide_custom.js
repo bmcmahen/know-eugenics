@@ -1,5 +1,5 @@
 /* optionally override the settings at the top of the highslide.js file */
-		hs.graphicsDir = '/graphics/';
+		hs.graphicsDir = '/highslide_graphics/';
 		hs.outlineType = 'custom3';
 		hs.wrapperClassName = 'draggable-header';
 		hs.showCredits = false;

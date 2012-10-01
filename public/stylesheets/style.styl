@@ -1,17 +1,22 @@
 @import 'variables'
 @import 'nib'
 @import 'buttons'
+@import 'navigation'
 
+/**
+ * Primary styles
+ */
 
 body
-  font: $baseFontSize $sansFontFamily
-  background-image url('/background1.png')
+  font: $baseFontSize $headingFont
+  background-image url('/shattered.png')
   margin 0
-  padding 0
+  padding-top 40px
   padding-bottom 75px
 
 a
   color: $blue
+  cursor pointer
   text-decoration: none
   &:hover
     text-decoration: underline
@@ -19,16 +24,12 @@ a
 p
   color: $blackLighter
 
-hr
-  width 100%
-  margin 30px 0px 20px 0px
-
 h1
-a.brand
   color #020D81
   display block
   margin-top 30px
-  font: 20px $headingFont
+  font: 60px $headingFont
+  font-weight 100
 
 h2
   color: $blue
@@ -42,201 +43,36 @@ h3
 
 ul
   list-style-type none
-  text-align center
   padding-left 0px
 
 ul li
   display inline
 
-
-#sub-header
-  background-image url('/shattered.png')
-  border-bottom 1px solid rgba(255,255,255,0.7)
-  box-shadow inset 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.1)
-  & ul
-    margin 0px
-
-#header
-  text-align center
-  padding-top 0px
-
-#header-fixed
-  box-shadow inset 0 -1px 1px rgba(255, 255, 255, 0.4),0 1px 1px rgba(0, 0, 0, 0.4)
-  border-bottom 1px solid #bbb
-  padding 20px
-
-#header-fixed ul.nav
-  margin 25px 0px 0px 12px
-
-#header-fixed a.brand
-  margin-top 16px
-  color $blue
-  display block
-  float left
-  font 900 18px "Helvetica Neue", Helvetica, Arial, sans-serif
-
-.nav
-  margin 40px 0px 20px 0px
-
-.nav li
-  padding 0px 18px 0px 18px
-  &:last-child
-    padding 0px 0px 0px 12px
-
-.divider-veritical
-  color #ddd
-
-.nav a
-  font $baseFontSize $headingFont
-  background transparent
-  color #555
-  font-weight 500
-  border-radius 3px
-  padding 5px 7px 5px 7px
-  text-align center
-  text-shadow 0px 1px 1px rgba(255,255,255, 0.50)
-  transition background 0.3s
-  &:hover
-    background #eee
-    text-decoration none
-
-#slider
-  background white
-
-#slider img
-  float left
-
-#slider h3
-  margin-top 30px
-
 #main
-  margin-top 30px
+  border-top 1px solid white
 
-#main .content
-  background whitesmoke
-  border-radius 5px
-  position relative
-
-
-#prod-objects
+#app
   margin-top 20px
 
-.prod
-.prod img
-  border-radius $borderRadius
+.content
+  position relative
 
-.prod
-  -webkit-transform scale(0.85)
-  -webkit-transform-style preserve-3d
-  -webkit-transition -webkit-transform 0.17s linear
-  -webkit-backface-visibility hidden
-  margin-top 18px
-  margin-bottom 18px
-  padding 7px
-  background rgba(255,255,255,0.7)
-  &:hover
-    -webkit-transform scale(1)
-  &.active
-    transform scale(1)
-    & img
-      opacity 1
+/**
+ * Utility Classes
+ */
 
-.prod img
-  // opacity 1
-  // transition opacity 1s
-  max-width 100%
-  &:hover
-    opacity 1
+.center
+  margin-left auto
+  margin-right auto
 
-
-.tools
-  // border 3px solid $green
-  border-radius 5px
-  width 134px
-  margin-bottom 15px
-  // background whitesmoke
-
-ul.toollist
-  margin 2px 0px 2px 0px
-
-ul.toollist li
-  display block
-  margin 0
-  padding 3px
-  width 100%
+.pull-left
   text-align left
-  &:hover
-    background rgba(0,0,0,.10)
 
-ul.toollist li a
-  display inline-block
-  margin-left 5px
+.pull-right
+  text-align right
 
-
-.label
-  margin 2px
-  padding-top 4px
-  font 700 11px "HelveticaNeue-Light" 
-  color #666
-
-// For Discovery Object Pages
-
-.navbar-fixed-top
-  fixed top left
-  right 0
-  z-index 1000
-
-ul.prod-nav
-  text-align left
-  margin-top 10px
-
-  & li
-    padding 5px
-
-  & a
-    text-shadow none
-    display inline-block
-    padding 1px 5px 1px 5px
-    border-radius 4px
-    &:hover
-      background #ddd
-      text-decoration none
-    &.current
-      cursor default
-      background #ddd
-      &:hover
-        text-decoration none
-
-  & li:first-child
-    padding-left 0px
-
-a.active
-  background whitesmoke
+.highlight
+  background #007D7F
+  color white
   border-radius 3px
-  // box-shadow inset 1px 1px 1px rgba(0,0,0,.30), 1px 1px 1px rgba(255,255,255,0.3)
-  pointer-events none
-  cursor default
-
-.image
-  margin-top 12px
-  padding 5px
-  border 1px solid #aaa
-  border-radius 3px
-  & img
-    border-radius 3px
-
-img.logo
-  display block
-  margin-top 25px
-  height 70px
-  margin-left 350px
-  margin-bottom 60px
-
-.gridster ul li
-  display block
-  position absolute
-  background whitesmoke
-  border-radius $borderRadius
-
-// #shelf
-//   background-image url('/shattered.png')
+  padding 2px 4px

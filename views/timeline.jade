@@ -1,4 +1,4 @@
-extends layout
+extends prod_layout
 
 block append styles 
     link(href='stylesheets/timeline/timeline.css', rel='stylesheet')
@@ -15,7 +15,7 @@ block append scripts
     script(src='javascripts/timeline/video.js')
 
 block content
-  .row
+  .row#app
     .span4
       h2 Eugenics Timeline
     .span8#timeline-header

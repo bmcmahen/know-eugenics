@@ -1,0 +1,41 @@
+@import 'nib'
+
+#flipcard-toolbar
+  height 30px
+  padding-bottom 8px
+
+#flipcard-search
+  float right
+  margin 6px
+
+.toolbar
+  float right
+
+.cards
+  position relative
+
+.card
+  position absolute
+  perspective 600px
+  cursor pointer
+  transform translate3d(0,0,0) scale3d(1,1,1)
+  transition transform, opacity, top, left
+  transform-style preserve-3d
+  transition-duration .5s
+  padding 10px
+  background rgba(255,255,255,0.4)
+  border-radius 4px
+  opacity 1
+  z-index 1000
+
+  &.hide
+    opacity 0
+    transform scale3d(.001, .001, 1)
+    z-index 1
+    pointer-events none
+
+  & img
+    border-radius 4px
+
+p.name
+  margin 10px 0px 0px 0px

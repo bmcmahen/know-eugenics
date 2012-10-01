@@ -46,6 +46,7 @@ app.get('/whatis', routes.whatis);
 app.get('/history', routes.history);
 app.get('/timeline', routes.timeline);
 app.get('/institutions', routes.institutions);
+app.get('/artistic-visions', routes.artistic);
 
 app.get('/people', routes.people);
 

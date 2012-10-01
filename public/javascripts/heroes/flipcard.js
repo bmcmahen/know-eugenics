@@ -233,7 +233,9 @@ $(function() {
 			},
 
 			render: function(options) {
-				this.$el.html(this.template(this.model.toJSON()));
+				var json = this.model.toJSON();
+				json.id = this.model.cid; 
+				this.$el.html(this.template(json));
 				this.redraw();
 				return this;
 			},
@@ -256,8 +258,10 @@ $(function() {
 			},
 
 			showOrHideCard: function() {
-				if (this.model.get("hide")) this.$el.addClass('hide');
-				else this.$el.removeClass('hide');
+				if (this.model.get("hide")) {
+					this.$el.addClass('hide').attr('aria-hidden', true);
+				}
+				else this.$el.removeClass('hide').attr('aria-hidden', false);
 				return this;
 			},
 

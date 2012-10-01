@@ -185,10 +185,10 @@ jQuery(document).ready(function() {
           toolbarTemplate: _.template($('#toolbar-template').html()),
           cardViewTemplate: _.template($('#card-view-template').html()),
           detailViewTemplate: _.template($('#detail-view-template').html()),
-          boxHeight: 220,
+          boxHeight: 300,
           boxWidth: 200,
-          paddingWidth: 30,
-          paddingHeight: 40
+          paddingWidth: 35,
+          paddingHeight: 10
       });
 
   $('.front').on('click', function(){
