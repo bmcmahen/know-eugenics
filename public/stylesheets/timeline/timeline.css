@@ -132,6 +132,15 @@ div.timeline-event {
   word-wrap: break-word; 
 }
 
+div.timeline-event.text {
+}
+
+div.timeline-event.text div.timeline-event-content {
+}
+
+div.timeline-event-range.text div.timeline-event-content {
+}
+
 div.timeline-event-content a {
 	display:  block;
 }
@@ -422,6 +431,20 @@ background: url(graphics/play.png) no-repeat center;
 
 /* @group inputs */
 
+ul.timeline-controls {
+  float: right;
+  margin: 0px;
+}
+
+ul.timeline-controls li {
+  display: inline;
+}
+
+li.vertical-divider {
+  padding: 5px 10px 5px 10px;
+  line-height: 30px;
+}
+
 div#timeline-header input {
   margin: 5px;
 }
@@ -431,4 +454,7 @@ div#timeline-header button {
 }
 
 /* @end */
+
+
+
 ​

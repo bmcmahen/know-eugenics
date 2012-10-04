@@ -1,36 +1,45 @@
 extends site_layout
 
+block nav-discover
+  a.active(href='/timeline') Discovery Tools
+
 block subheader
   #sub-header
     .container
       .row
         .span2
-          a(href='/timeline')
-            .prod
-              img(src='images/whatis.png', role='presentation')
-              p.label What is Eugenics?
+          a(href='/whatis')
+            block subnav-whatis
+              .prod
+                img(src='images/whatis.png', role='presentation')
+                p.label What is Eugenics?
          .span2
           a(href='/heroes')
-            .prod.active
-              img(src='images/hero.png', role='presentation')
-              p.label Heroes & Villains
+            block subnav-heroes
+              .prod
+                img(src='images/hero.png', role='presentation')
+                p.label Heroes & Villains
         .span2
           a(href='/timeline')
-            .prod
-              img(src='images/timeline.png', role='presentation')
-              p.label Timeline of Eugenics
+            block subnav-timeline
+              .prod
+                img(src='images/timeline.png', role='presentation')
+                p.label Timeline of Eugenics
         .span2
           a(href='#')
-            .prod
-              img(src='images/mindmap.png', role='presentation')
-              p.label Eugenics Mind Map
+            block subnav-mindmap
+              .prod
+                img(src='images/mindmap.png', role='presentation')
+                p.label Eugenics Mind Map
         .span2
-          a(href='#')
-            .prod
-              img(src='images/institutions.png', role='presentation')
-              p.label Institutions
+          a(href='institutions')
+            block subnav-institutions
+              .prod
+                img(src='images/institutions.png', role='presentation')
+                p.label Institutions
         .span2
-          a(href='#')
-            .prod
-              img(src='images/archive.png', role='presentation')
-              p.label Exploring Archives
+          a(href='exploring')
+            block subnav-exploring
+              .prod
+                img(src='images/archive.png', role='presentation')
+                p.label Exploring Archives

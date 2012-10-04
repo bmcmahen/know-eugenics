@@ -19,16 +19,16 @@
   -ms-perspective: 600px;
   perspective: 600px;
   cursor: pointer;
-  -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-  -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-  -o-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-  -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-  -webkit-transition: transform, opacity, top, left;
-  -moz-transition: transform, opacity, top, left;
-  -o-transition: transform, opacity, top, left;
-  -ms-transition: transform, opacity, top, left;
-  transition: transform, opacity, top, left;
+  -webkit-transform: scale3d(1, 1, 1);
+  -moz-transform: scale3d(1, 1, 1);
+  -o-transform: scale3d(1, 1, 1);
+  -ms-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  -webkit-transition: all;
+  -moz-transition: all;
+  -o-transition: all;
+  -ms-transition: all;
+  transition: all;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
@@ -48,7 +48,7 @@
   filter: none;
   z-index: 1000;
 }
-.card.hide {
+.card.minimize {
   opacity: 0;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   filter: alpha(opacity=0);

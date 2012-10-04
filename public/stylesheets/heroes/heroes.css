@@ -32,11 +32,11 @@ perspective:600px;
 -o-transform:translate3d(0,0,0) scale3d(1,1,1);
 -ms-transform:translate3d(0,0,0) scale3d(1,1,1);
 transform:translate3d(0,0,0) scale3d(1,1,1);
--webkit-transition-property:transform,opacity,top,left;
--moz-transition-property:transform,opacity,top,left;
--o-transition-property:transform,opacity,top,left;
--ms-transition-property:transform,opacity,top,left;
-transition-property:transform,opacity,top,left;
+-webkit-transition-property: all;
+-moz-transition-property: all;
+-o-transition-property: all;
+-ms-transition-property: all;
+transition-property: all;
 -webkit-transform-style:preserve-3d;
 -moz-transform-style:preserve-3d;
 -o-transform-style:preserve-3d;
@@ -134,7 +134,7 @@ overflow:hidden;
 text-overflow:ellipsis;
 }
 
-.hide {
+.minimize {
 opacity:0;
 -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 filter:alpha(opacity=0);

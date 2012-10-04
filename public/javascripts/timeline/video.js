@@ -10,11 +10,13 @@ function playVideo() {
 
     $(this).off('click');
 
+    console.log($(this))
+
     //get video attributes and placeholder
     var wrapper = $(this);
     var placeholder = $(wrapper).html();
     var m4v = $(wrapper).attr('m4v');
-    var webm = $(wrapper).attr('webm');
+    console.log(m4v)
 
     var imgheight = $(wrapper).find('img').height();
     var imgwidth = $(wrapper).find('img').width();
@@ -29,7 +31,6 @@ function playVideo() {
     //video settings
     video.controls = false;
     video.src = m4v;
-    video.src = webm;
     video.width = imgwidth;
     video.height = imgheight;
 
@@ -39,7 +40,7 @@ function playVideo() {
     video.addEventListener('play', videoPlay, false);
 
     function videoPlay() {
-        $(playbutton).css("background-image","url(css/graphics/stop.png)");   
+        $(playbutton).css("background-image","url(/timeline/stop.png)");   
         $(wrapper).find('.caption').hide();                             
     }
     

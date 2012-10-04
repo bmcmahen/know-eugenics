@@ -9,6 +9,11 @@ block append scripts
   script(src='javascripts/heroes/flipcard.js')
   script(src='javascripts/heroes/app.js')
 
+block subnav-heroes
+  .prod.active
+    img(src='images/hero.png', role='presentation')
+    p.label Heroes & Villains
+                
 block content
   #app.row
     .span3

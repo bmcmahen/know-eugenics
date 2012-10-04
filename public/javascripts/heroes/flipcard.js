@@ -259,9 +259,9 @@ $(function() {
 
 			showOrHideCard: function() {
 				if (this.model.get("hide")) {
-					this.$el.addClass('hide').attr('aria-hidden', true);
+					this.$el.addClass('minimize').attr('aria-hidden', true);
 				}
-				else this.$el.removeClass('hide').attr('aria-hidden', false);
+				else this.$el.removeClass('minimize').attr('aria-hidden', false);
 				return this;
 			},
 

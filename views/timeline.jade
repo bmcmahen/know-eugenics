@@ -14,17 +14,39 @@ block append scripts
     script(src='javascripts/timeline/timeline_custom.js')
     script(src='javascripts/timeline/video.js')
 
+block subnav-timeline
+  .prod.active
+    img(src='images/timeline.png', role='presentation')
+    p.label Timeline of Eugenics
+
 block content
   .row#app
     .span4
       h2 Eugenics Timeline
     .span8#timeline-header
-      fieldset(title='for the timeline-date-range')
-        label(for='startDate')
-        input#startDate(type='text', name='startDate')
-        label(for='endDate')
-        input#endDate(type='text, name='endDate')
-        button#setStartDate.btn(onclick='setTime();') Set Visible Dates
+      ul.timeline-controls
+        li
+          select.timeline-filter#timeline-filter
+            option All Categories
+            optgroup label='Geography'
+              option Eugenics in Canada
+              option University of Alberta
+            optgroup label='Type'
+              option Art
+              option Law
+              option Legislation
+              option Organizations
+              option People
+              option Politics
+              option Science
+        li.vertical-divider |
+        li
+          fieldset(title='for the timeline-date-range')
+            label(for='startDate')
+            input#startDate.short(type='text', name='startDate')
+            label(for='endDate')
+            input#endDate.short(type='text, name='endDate')
+            button#setStartDate.btn(onclick='setTime();') Set Visible Dates
   .row
     .span12#mytimelinewrapper(role='navigation')
       a.leftarrow(href='javascript:void(0)', title='Move Backwards in Time', onClick='moveTimeline(-0.2);')
@@ -38,7 +60,7 @@ block content
   block templates   
     script(type='text/template', id='timeline-text').
       <a href="javascript:void(0);" title="Click to display additional information in Pop-up." name="<%= name %>" onclick="return hs.htmlExpand(this)">
-          <span class="name"><%= name %></span>
+          <span class="name"><strong> <%= startDate %> </strong> : <%= name %></span>
       </a>
       <div class="highslide-maincontent">
           <p title="Press Escape to Return to Timeline.">
@@ -46,11 +68,13 @@ block content
           <%= description %>
           </p>
       </div>
-      
+
     script(type='text/template', id='timeline-image').
       <a href="<%= image %>" title="Click to display additional information in Pop-up." class="highslide" onclick="return hs.expand(this)">
-          <img src="<%= imageThumb %>" alt="<%= name %>">
+          <img class='timeline-image' src="<%= imageThumb %>" alt="<%= name %>" style='height: <%= thumbHeight %>px; width: <%= thumbWidth %>px;'>
+          <span class='caption'> <%= startDate %> : <%= name %> </span>
       </a>
+
       <div class="highslide-caption">
           <p title="Press Escape to Return to Timeline.">
               <strong><%= startDate %> : </strong>
@@ -59,7 +83,8 @@ block content
       </div>
 
     script(type='text/template', id='timeline-video').
-      <div class="vidwrapper" m4v="<%= m4v %>" webm="<%= webm %>">
+      <div class="vidwrapper" m4v="<%= m4v %>">
              <img src="<%= imageThumb %>" alt="Click to Play Video"> 
+             <span class='caption'> <%= name %> </span>
              <div class="vidplay"></div>
        </div>   

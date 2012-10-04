@@ -1,60 +1,11 @@
-extends layout
+extends prod_layout
 
-block append styles
-  link(href='stylesheets/hero.css', rel='stylesheet')
-
-block append scripts
-  script(src='javascripts/underscore.js')
-  script(src='javascripts/backbone.js')
-  script(src='javascripts/heroes/flipcard.js')
-  script(src='javascripts/heroes/app.js')
-
+block subnav-institutions
+  .prod.active
+    img(src='images/institutions.png', role='presentation')
+    p.label Institutions
 
 block content
-  .arrow-right.hero
-  h2 Heroes and Villains
-  p.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  p.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  hr
-  #flipcard-toolbar
-  #flipcard-wrapper
-
-block templates
-  script#card-view-template(type='javascript/template').
-     <div class="front">
-        <img src="<%= imageURL %>"/>
-        <div class="caption">
-          <p class="name"><strong><%= title %></strong></p>
-          <p class="date"><%= date %></p>
-          <p class="date"><%= description %></p>
-        </div> 
-      </div>
-      <div class="back">
-          <p><strong>Hero: </strong> <%= heroQuote %></p>
-          <p><strong>Villain: </strong><%= villainQuote %></p>
-      </div>
-
-  script#toolbar-template(type='javascript/template').
-    <input type='text' id='flipcard-search' placeholder='Search Names'>
-    <div class="btn-group" data-toggle="buttons-radio">
-      <button class="btn browser-sort" data-sort-field='title'> Name </button>
-      <button class="btn browser-sort" data-sort-field='category'> Occupation </button>
-      <button class="btn browser-sort" data-sort-field='date'> Dates </button>
-    </div>
-    <div class="btn-group" data-toggle="buttons-radio">
-      <button class="btn browser-filter active" data-filter-category='all'> All </button>
-      <button class="btn browser-filter" data-filter-category='politician'> Politicans </button>
-      <button class="btn browser-filter" data-filter-category='scientist'> Scientists </button>
-    </div>
+  #app.row
+    .span3
+      h2 Institutions

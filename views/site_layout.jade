@@ -26,26 +26,22 @@ html(lang='en')
                 span.icon-bar
                 span.icon-bar
                 span.icon-bar
-              a.brand Eugenics Archives
+              a.logo(href='#', name='Eugenics Archives Canada')
               .nav-collapse
                 ul.nav(role='navigation')
                   li.divider-vertical
                   li
-                    a(href='#') Resources
+                    block nav-discover
+                      a(href='/timeline') Discovery Tools
                   li.divider-vertical
                   li
-                    a.active(href='#') Discovery Objects
+                    block nav-av
+                      a(href='/artistic-visions') Audio & Video
                   li.divider-vertical
                   li
-                    a(href='artistic-visions') Artistic Visions
+                    a(href='http://www.eugenicsarchive.ca') About the Project
                   li.divider-vertical
-                  li
-                    a(href='http://whatsortsofpeople.wordpress.com/') What Sorts Blog
-                  li.divider-vertical
-                  li
-                    a(href='http://eugenicsarchive.ca/') About Us
-                  li.divider-vertical
-
+              
     block subheader
        
     section#main(role='main')

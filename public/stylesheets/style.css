@@ -57,6 +57,7 @@ div.btn-group button.btn:first-child {
   border-bottom-left-radius: 3px;
   margin-left: 0px;
 }
+fieldset > .btn:last-child,
 .btn-group > .btn:last-child,
 .btn-group > .dropdown-toggle {
   border-top-right-radius: 3px !important;
@@ -90,6 +91,13 @@ legend {
 #header p {
   margin: 4px;
 }
+#header a.logo {
+  background-image: url("/laelogo2.png");
+  height: 41px;
+  width: 270px;
+  float: right;
+  margin: 0px;
+}
 #header ul.nav li {
   line-height: 20px;
 }
@@ -122,7 +130,7 @@ img.logo {
   height: 25px;
 }
 #sub-header {
-  background-image: url("/extra_backgrounds/noisy_grid.png");
+  background-image: url("/extra_backgrounds/noisy_grid_light.png");
   border-bottom: 1px solid #bbb;
 }
 #sub-header div.prod {
@@ -219,9 +227,6 @@ ul {
   list-style-type: none;
   padding-left: 0px;
 }
-ul li {
-  display: inline;
-}
 #main {
   border-top: 1px solid #fff;
 }
@@ -250,4 +255,7 @@ ul li {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   padding: 2px 4px;
+}
+input.short {
+  width: 100px;
 }
