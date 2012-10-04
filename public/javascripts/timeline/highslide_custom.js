@@ -6,6 +6,7 @@
 		hs.width = 300; 
 		hs.headingEval = 'this.a.name'; 
 		hs.minHeight = 150; 
+		hs.zIndexCounter = 1300; 
 
 
 // Manages proper focusing for use with screenreaders. 

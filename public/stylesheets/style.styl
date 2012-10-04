@@ -13,6 +13,7 @@ body
   margin 0
   padding-top 40px
   padding-bottom 75px
+  height 100%
 
 a
   color: $blue
@@ -20,6 +21,9 @@ a
   text-decoration: none
   &:hover
     text-decoration: underline
+  &#fullscreenmode
+    display inline-block
+    padding 5px 10px 5px 10px
 
 p
   color: $blackLighter
@@ -33,6 +37,7 @@ h1
 
 h2
   color: $blue
+  display inline-block
   font: 100 25px $headingFont
   margin 0px
 
@@ -52,8 +57,33 @@ ul
 #app
   margin-top 20px
 
+  &.fullscreen
+    position fixed
+    margin-top 0px
+    top 0
+    height 100%
+    width 100%
+    right 20px
+    bottom 0
+    left 20px
+    z-index 1200
+
 .content
   position relative
+
+#modalbackdrop
+  display none
+
+  &.open
+    display block
+    position fixed
+    top 0
+    right 0
+    bottom 0
+    left 0
+    z-index 1040
+    background-color #9DC9C5
+    opacity 0.9
 
 /**
  * Utility Classes

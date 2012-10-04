@@ -194,6 +194,7 @@ body {
   margin: 0;
   padding-top: 40px;
   padding-bottom: 75px;
+  height: 100%;
 }
 a {
   color: #41295a;
@@ -202,6 +203,10 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+a#fullscreenmode {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
 }
 p {
   color: #444;
@@ -215,6 +220,7 @@ h1 {
 }
 h2 {
   color: #41295a;
+  display: inline-block;
   font: 100 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0px;
 }
@@ -233,8 +239,35 @@ ul {
 #app {
   margin-top: 20px;
 }
+#app.fullscreen {
+  position: fixed;
+  margin-top: 0px;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  right: 20px;
+  bottom: 0;
+  left: 20px;
+  z-index: 1200;
+}
 .content {
   position: relative;
+}
+#modalbackdrop {
+  display: none;
+}
+#modalbackdrop.open {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #9dc9c5;
+  opacity: 0.9;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  filter: alpha(opacity=90);
 }
 /**
  * Utility Classes

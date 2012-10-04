@@ -1,4 +1,55 @@
+/**
+ * CUSTOM HIGHSLIDE
+ */
+/* optionally override the settings at the top of the highslide.js file */
+    hs.graphicsDir = '/highslide_graphics/';
+    hs.outlineType = 'custom3';
+    hs.wrapperClassName = 'draggable-header';
+    hs.showCredits = false;
+    hs.width = 600; 
+    hs.headingEval = 'this.a.name'; 
+    hs.minHeight = 400; 
+    hs.zIndexCounter = 1300; 
+
+
+// Manages proper focusing for use with screenreaders. 
+hs.Expander.prototype.onAfterExpand = function() {
+
+//if paragraph exists, focus on first paragraph. Else read unformatted text. 
+if ($(this.content).find('.highslide-maincontent p').length > 0) {
+  var firstparagraph = $(this.content).find('.highslide-maincontent p').get(0); 
+  $(firstparagraph).attr('tabindex', -1).focus(); 
+} else {
+  $(this.content).find('.highslide-maincontent').attr('tabindex', -1).focus(); 
+};
+
+//if paragraph exists, focus on first paragraph. Else, read unformatted text.
+if ($(this.wrapper).find('.highslide-caption p').length > 0) {
+  var captionparagraph = $(this.wrapper).find('.highslide-caption p').get(0); 
+  $(captionparagraph).attr('tabindex', -1).focus(); 
+} else {
+  $(this.wrapper).find('.highslide-caption').attr('tabindex', -1).focus(); 
+};
+
+};  
+
+// Returns focus to proper element on close of highslide window. 
+hs.Expander.prototype.onAfterClose = function () {
+  $(this.a).focus(); 
+};
+
+
+
+// displays greeting
+//window.onload = function () {
+//var heading = document.getElementById("start-info"); 
+//return hs.htmlExpand(heading, {maincontentId:'start-content', headingText: 'Living Archives on Eugenics - Timeline', width: '350'}); 
+//}
+//
+
+
 jQuery(document).ready(function() {
+
 
 /* this is the JSON object which will contain all of the data for the Heroes/Villains
   modele. It's basically an array of dictionaries. The square bracket represents the 
@@ -235,4 +286,20 @@ setInterval(function(){
   randomFlip.flip()
 }, 10000);
 
+/**
+ * Enter full screen mode
+ */
+
+$('#fullscreenmode').on('click', function(e){
+  var $app = $('#app');
+  if ($app.hasClass('fullscreen')) {
+      $(e.currentTarget).text('(Full Screen)')
+      $app.removeClass('fullscreen');
+      $('#modalbackdrop').removeClass('open');
+  } else {
+      $(e.currentTarget).text('(Exit Full Screen)')
+      $app.addClass('fullscreen');
+      $('#modalbackdrop').addClass('open');
+  }
+})
 });

@@ -2,11 +2,13 @@ extends prod_layout
 
 block append styles
   link(href='stylesheets/heroes/heroes.css', rel='stylesheet')
+  link(href='stylesheets/timeline/highslide.css', rel='stylesheet')
 
 block append scripts
   script(src='javascripts/underscore.js')
   script(src='javascripts/backbone.js')
   script(src='javascripts/heroes/flipcard.js')
+  script(src='javascripts/timeline/highslide-full.min.js')
   script(src='javascripts/heroes/app.js')
 
 block subnav-heroes
@@ -15,14 +17,18 @@ block subnav-heroes
     p.label Heroes & Villains
                 
 block content
-  #app.row
-    .span3
-      h2 Heroes and Villains
-    .span9#flipcard-toolbar
-  .row
-    .content.span12
-      .row
-        .span12#flipcard-wrapper
+  #app
+    .row
+      .span4
+        h2 Heroes and Villains
+        a#fullscreenmode(href='#') (Full Screen)
+      .span8#flipcard-toolbar
+    .row
+      .content.span12
+        .row
+          .span12#flipcard-wrapper
+    #modalbackdrop
+
 
 block templates
 
@@ -42,6 +48,13 @@ block templates
       </div>
       <div class="back">
           <p>quote</p>
+          <a href='#' id='<%= id %>' class='personInfo' name='<%= title %>' onclick='window.event.stopPropagation(); console.log(this); return hs.htmlExpand(this)'>More info</a>
+             <div class="highslide-maincontent">
+              <img src='<%= imageURL %>' alt='A picture of <%= title %>'/> 
+              <p title="Press Escape to Return to Heroes and Villains." aria-labelledby='<%= id %>'>
+               <%= description %>
+              </p>
+          </div>
       </div>
 
   script#toolbar-template(type='javascript/template').

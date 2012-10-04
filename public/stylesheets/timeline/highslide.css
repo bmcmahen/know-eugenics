@@ -147,7 +147,19 @@ a.highslide-credits:hover i {
 	padding-top: 0;
 	font: bold 12pt "Lucida Grande", Lucida, Verdana, sans-serif;
 	text-align: left;
+	color: #eee;
 }
+
+.highslide-maincontent p {
+	color: #eee;
+	font: 400 11pt HelveticaNeue, Helvetica, Arial, Sans-serif;
+}
+
+.highslide-maincontent img {
+	float: left;
+	padding: 0px 20px 20px 5px;
+}
+
 .highslide-html {
 	background-color: white;
 }

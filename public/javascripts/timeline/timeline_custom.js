@@ -552,8 +552,8 @@ function moveTimeline(degree) {
 })(jQuery);
 
 // does some math to draw the slider background
-function drawSliderBackground() {
-	var wrapperWidth = $('#mytimelinewrapper').width();
+function drawSliderBackground(width) {
+	var wrapperWidth = width || $('#mytimelinewrapper').width();
 	$('#slider-range').css('width', wrapperWidth);
 
 	var numDivisions = 8;
@@ -581,8 +581,9 @@ function drawSliderBackground() {
 };
 
 // Initializes the dragslider for #slider-range div on html page. 
-function addSlider() {
-	drawSliderBackground();
+function addSlider(width) {
+      width = width || null; 
+	drawSliderBackground(width);
 	$("#slider-range").dragslider({
 		range: true,
 		min: startDate,
