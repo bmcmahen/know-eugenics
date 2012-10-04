@@ -1,11 +1,12 @@
 extends prod_layout
 
 block append styles
-  link(href='stylesheets/hero.css', rel='stylesheet')
-  link(href='stylesheets/whatis.css', rel='stylesheet')
+  link(href='/stylesheets/what_is_eugenics/whatis.css', rel='stylesheet')
 
 block append scripts
   script(src='/javascripts/jquery.min.js')
+  script(src='/javascripts/jmpress.js')
+  script(src='/javascripts/whatis/whatis.js')
 
 block subnav-whatis
   .prod.active
@@ -17,19 +18,16 @@ block content
     .span3
       h2 What is Eugenics?
   .row
-    .presentation-container
-      #impress
-        .step(data-x='0', data-y='0')
-          img(src='/images/archive.png')
-        .step(data-x='500', data-y='0')
-          img(src='/images/extras/composit-portrait.jpg')
-        .step(data-x='500', data-y='-400')
-          p third slide
-        .step(data-x='500', data-y='-800', data-scale='0.5')
-          p fourth slide
-        .step(data-x='0', data-y='-800', data-rotate='90')
-          p fifth slide
-
-      script(src='/javascripts/impress.js')
-      script(type='text/javascript').
-        impress().init();
+    .span12
+      .presentation-container
+        #jmpress
+          .step(data-x='0', data-y='0')
+            img(src='/images/archive.png')
+          .step(data-x='500', data-y='0')
+            img(src='/images/extras/composit-portrait.jpg')
+          .step(data-x='500', data-y='-400')
+            p third slide
+          .step(data-x='500', data-y='-800', data-scale='0.5')
+            p fourth slide
+          .step(data-x='0', data-y='-800', data-rotate='90')
+            p fifth slide
