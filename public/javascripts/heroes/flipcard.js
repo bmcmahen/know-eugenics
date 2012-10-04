@@ -101,6 +101,8 @@ $(function() {
 
 			// Compute padding width
 			getPaddingWidth: function() {
+				console.log($(Browser.options));
+
 				var containerWidth = $(Browser.options.wrapper).width(),
 					boxWidth = Browser.options.boxWidth,
 					paddingWidth = Browser.options.paddingWidth,
@@ -395,6 +397,7 @@ $(function() {
 			},
 
 			redraw: function() {
+				console.log('running', this.cards)
 				this.cards.determineLocation();
 			},
 

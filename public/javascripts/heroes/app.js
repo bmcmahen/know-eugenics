@@ -1,3 +1,5 @@
+////////////////////////// CLEAN THIS UGLY CODE UP
+
 /**
  * CUSTOM HIGHSLIDE
  */
@@ -296,10 +298,14 @@ $('#fullscreenmode').on('click', function(e){
       $(e.currentTarget).text('(Full Screen)')
       $app.removeClass('fullscreen');
       $('#modalbackdrop').removeClass('open');
+      $('#flipcard-wrapper').width($('#app').width());
+      flipcard.redraw(); 
   } else {
       $(e.currentTarget).text('(Exit Full Screen)')
       $app.addClass('fullscreen');
       $('#modalbackdrop').addClass('open');
+      $('#flipcard-wrapper').width($('#app').width());
+      flipcard.redraw(); 
   }
 })
 });
