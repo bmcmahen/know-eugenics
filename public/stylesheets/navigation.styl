@@ -21,27 +21,27 @@
 
   & ul.nav
 
-    & li
-      line-height 20px
+  //   & li
+  //     line-height 20px
 
-    & a
-      float none
-      padding 13px 20px 13px
-      background transparent
-      font 500 12px 'HelveticaNeue', Helvetica, Arial, Sans-serif
-      display block
-      text-shadow 0px 1px 1px rgba(255,255,255, 0.50)
-      transition background 0.3s
+  //   & a
+  //     float none
+  //     padding 13px 20px 13px
+  //     background transparent
+  //     font 500 12px 'HelveticaNeue', Helvetica, Arial, Sans-serif
+  //     display block
+  //     text-shadow 0px 1px 1px rgba(255,255,255, 0.50)
+  //     transition background 0.3s
 
       &.active
-        background #eee
+        background-image linear-gradient(top,  #A9A89D, #B9B9B1)
         // box-shadow inset 1px 1px 1px rgba(0,0,0,.30), 1px 1px 1px rgba(255,255,255,0.3)
         pointer-events none
         cursor default
 
-      &:hover
-        background #eee
-        text-decoration none
+        & li:hover
+          background #eee
+          text-decoration none
 
 img.logo
   display block
@@ -65,7 +65,7 @@ img.logo
     margin-top 18px
     margin-bottom 18px
     padding 7px
-    background white
+    background rgba(255, 255, 255, 0.8)
     border-radius $borderRadius
 
     &:hover

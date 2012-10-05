@@ -41,15 +41,11 @@ $(function() {
 			},
 
 			hide: function() {
-				this.set({
-					hide: true
-				});
+				this.set({ hide: true });
 			},
 
 			show: function() {
-				this.set({
-					hide: false
-				});
+				this.set({ hide: false });
 			}
 
 		});
@@ -110,7 +106,7 @@ $(function() {
 				return Browser.options.justified ? getJustified() : getCentered()
 			},
 
-			// MX = left and right padding width. I assume, for different algorithm, that it's equal to 0
+			// MX = left and right padding width of container, for centering. 
 			getPaddingWidth: function() {
 
 				var containerWidth = $(Browser.options.wrapper).width(),
@@ -231,8 +227,8 @@ $(function() {
 
 					var newCard = new Browser.CardView({
 						model: card
-
 					});
+
 					return newCard.render().el;	
 				});
 
@@ -298,8 +294,7 @@ $(function() {
 
 			flipCard: function(event) {
 				var $card = $(event.currentTarget);
-				if ($card.hasClass('flip')) $card.removeClass('flip');
-				else $card.addClass('flip');
+				$card.hasClass('flip') ? $card.removeClass('flip') : $card.addClass('flip')
 			},
 
 			showDetail: function(event){
@@ -365,8 +360,6 @@ $(function() {
 
 				var filterField = $(event.target).data('filter-category');
 
-				console.log("filterCards called");
-
 				if (filterField === "all") {
 					this.collection.showHiddenModels();
 					this.collection.determineLocation();
@@ -426,7 +419,6 @@ $(function() {
 			},
 
 			redraw: function() {
-				console.log('running', this.cards)
 				this.cards.determineLocation();
 			},
 
@@ -445,9 +437,6 @@ $(function() {
 				this.currentView = view; 
 				this.currentModel = model; 
 			}
-
-			
-
 		});
 
 		return Browser;

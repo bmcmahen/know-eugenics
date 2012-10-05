@@ -60,7 +60,8 @@ jQuery(document).ready(function() {
           boxHeight: 3600,
           boxWidth: 220,
           paddingWidth: 10,
-          paddingHeight: 10
+          paddingHeight: 10,
+          justified: true
       });
 
 /* optionally override the settings at the top of the highslide.js file */
@@ -71,6 +72,7 @@ jQuery(document).ready(function() {
     hs.minWidth = 500; 
     hs.headingEval = 'this.a.name'; 
     hs.minHeight = 250; 
+    hs.zIndexCounter = 1400; 
 
 
   // Manages proper focusing for use with screenreaders. 
