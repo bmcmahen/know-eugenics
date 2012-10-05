@@ -216,12 +216,12 @@ h1 {
   display: block;
   margin-top: 30px;
   font: 60px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
 }
 h2 {
   color: #41295a;
   display: inline-block;
-  font: 100 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 300 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0px;
 }
 h3 {

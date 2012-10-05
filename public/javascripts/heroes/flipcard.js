@@ -105,18 +105,18 @@ $(function() {
 					return Math.floor(containerWidth/(boxWidth + paddingWidth));
 				}
 
+				// Use either get Justified or Centering logic to compute boxes per
+				// row, depending on user settings.
 				return Browser.options.justified ? getJustified() : getCentered()
 			},
 
 			// MX = left and right padding width. I assume, for different algorithm, that it's equal to 0
 			getPaddingWidth: function() {
-				console.log($(Browser.options));
 
 				var containerWidth = $(Browser.options.wrapper).width(),
 					boxWidth = Browser.options.boxWidth,
 					paddingWidth = Browser.options.paddingWidth,
 					boxesPerRow = this.getBoxesPerRow();
-
 
 				return (containerWidth - (boxesPerRow * boxWidth) - (boxesPerRow - 1) * paddingWidth) * 0.5;
 			},
@@ -147,19 +147,12 @@ $(function() {
 							var remainingSpace = containerWidth - (boxWidth * boxesPerRow);
 							var padding = remainingSpace / (boxesPerRow - 1);
 							return boxWidth + (c * padding) + ((c - 1) * boxWidth)
-							// var newWidth = containerWidth - (boxWidth * 2),
-							// 	centre = newWidth / (boxesPerRow - 2),
-							// 	halfWidth = boxWidth / 2;
-
-							// console.log(newWidth, centre, halfWidth)
-
-							// console.log(c)
-							// return boxWidth + (c  * centre) - halfWidth;
 						}
 					}
 
+					// Use either Centered logic or Justified logic for determining left position
+					// of card elements.
 					var left = Browser.options.justified ? getJustified() : getCentered()
-
 					var top = ((r * boxHeight) + (r + 1) * paddingHeight);	
 
 					cardModel.set({
@@ -168,6 +161,7 @@ $(function() {
 					});
 
 				});
+
 				return this;
 			},
 
