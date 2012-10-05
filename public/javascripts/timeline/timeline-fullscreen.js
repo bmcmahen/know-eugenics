@@ -13,11 +13,14 @@ $(document).ready(function() {
             $(e.currentTarget).text('(Exit Full Screen)')
             $app.addClass('fullscreen');
             $('#modalbackdrop').addClass('open');
-            timelineSize($app.width() - 40, $app.height() - 70)
+            timelineSize($app.width() -40, $app.height())
          }
       })
 
    function timelineSize(width, height){
+    console.log(height)
+    height = height - 40;
+    console.log(height)
     $('#mytimelinewrapper').width(width).height(height)
     vis.setSize(width + 'px', height + 'px')
     addSlider(width);

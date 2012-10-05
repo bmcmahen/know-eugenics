@@ -241,7 +241,8 @@ jQuery(document).ready(function() {
           boxHeight: 300,
           boxWidth: 200,
           paddingWidth: 35,
-          paddingHeight: 10
+          paddingHeight: 10,
+          justified: true
       });
 
   $('.front').on('click', function(){
@@ -304,7 +305,7 @@ $('#fullscreenmode').on('click', function(e){
       $(e.currentTarget).text('(Exit Full Screen)')
       $app.addClass('fullscreen');
       $('#modalbackdrop').addClass('open');
-      $('#flipcard-wrapper').width($('#app').width());
+      $('#flipcard-wrapper').width($('#app').width() - 50);
       flipcard.redraw(); 
   }
 })

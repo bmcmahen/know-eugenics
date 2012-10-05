@@ -26,7 +26,8 @@ $(function() {
 			filterClass: ".browser-filter",
 			sortClass: ".browser-sort",
 			cardViewTemplate: "",
-			toolbarTemplate: ""
+			toolbarTemplate: "",
+			justified: false
 		};
 
 
@@ -95,11 +96,19 @@ $(function() {
 					boxWidth = Browser.options.boxWidth,
 					paddingWidth = Browser.options.paddingWidth;
 
-				var boxesPerRow = Math.floor(containerWidth / (boxWidth + paddingWidth));
-				return boxesPerRow;
+				var getJustified = function(){
+					var width = (containerWidth - (boxWidth * 2));
+					return Math.floor(width/(boxWidth + paddingWidth)) + 2;
+				}
+
+				var getCentered = function(){
+					return Math.floor(containerWidth/(boxWidth + paddingWidth));
+				}
+
+				return Browser.options.justified ? getJustified() : getCentered()
 			},
 
-			// Compute padding width
+			// MX = left and right padding width. I assume, for different algorithm, that it's equal to 0
 			getPaddingWidth: function() {
 				console.log($(Browser.options));
 
@@ -108,8 +117,8 @@ $(function() {
 					paddingWidth = Browser.options.paddingWidth,
 					boxesPerRow = this.getBoxesPerRow();
 
-				var mx = (containerWidth - (boxesPerRow * boxWidth) - (boxesPerRow - 1) * paddingWidth) * 0.5;
-				return mx;
+
+				return (containerWidth - (boxesPerRow * boxWidth) - (boxesPerRow - 1) * paddingWidth) * 0.5;
 			},
 
 			// Determine location of a card
@@ -120,18 +129,44 @@ $(function() {
 					paddingWidth = Browser.options.paddingWidth,
 					paddingHeight = Browser.options.paddingHeight,
 					boxHeight = Browser.options.boxHeight,
-					boxWidth = Browser.options.boxWidth;
+					boxWidth = Browser.options.boxWidth,
+					containerWidth = $(Browser.options.wrapper).width();
 
 				this.each(function(cardModel, index) {
 					var r = Math.floor(index / boxesPerRow),
-						c = index % boxesPerRow,
-						left = mx + (c * (boxWidth + paddingWidth)),
-						top = ((r * boxHeight) + (r + 1) * paddingHeight);
+						c = index % boxesPerRow;
+
+					var getCentered = function(){
+						return mx + (c * (boxWidth + paddingWidth));	
+					};
+
+					var getJustified = function(){
+						if (c === 0) return 0;
+						else if (c === boxesPerRow - 1) return containerWidth - boxWidth;
+						else {
+							var remainingSpace = containerWidth - (boxWidth * boxesPerRow);
+							var padding = remainingSpace / (boxesPerRow - 1);
+							return boxWidth + (c * padding) + ((c - 1) * boxWidth)
+							// var newWidth = containerWidth - (boxWidth * 2),
+							// 	centre = newWidth / (boxesPerRow - 2),
+							// 	halfWidth = boxWidth / 2;
+
+							// console.log(newWidth, centre, halfWidth)
+
+							// console.log(c)
+							// return boxWidth + (c  * centre) - halfWidth;
+						}
+					}
+
+					var left = Browser.options.justified ? getJustified() : getCentered()
+
+					var top = ((r * boxHeight) + (r + 1) * paddingHeight);	
 
 					cardModel.set({
 						position_top: top,
 						position_left: left
 					});
+
 				});
 				return this;
 			},

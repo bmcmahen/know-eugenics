@@ -237,17 +237,16 @@ ul {
   border-top: 1px solid #fff;
 }
 #app {
-  margin-top: 20px;
+  padding-top: 20px;
 }
 #app.fullscreen {
   position: fixed;
   margin-top: 0px;
   top: 0;
   height: 100%;
-  width: 100%;
-  right: 20px;
+  right: 0px;
   bottom: 0;
-  left: 20px;
+  left: 40px;
   z-index: 1200;
 }
 .content {
@@ -264,7 +263,7 @@ ul {
   bottom: 0;
   left: 0;
   z-index: 1040;
-  background-color: #9dc9c5;
+  background-color: #c2c2c2;
   opacity: 0.9;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
   filter: alpha(opacity=90);

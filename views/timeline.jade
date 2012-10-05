@@ -22,11 +22,8 @@ block subnav-timeline
 
 block content
   #app
-    .row
-      .span5
         h2 Eugenics Timeline
         a#fullscreenmode(href='#') (Full Screen)
-      .span7#timeline-header
         ul.timeline-controls
           li
             select.timeline-filter#timeline-filter
@@ -50,15 +47,14 @@ block content
               label(for='endDate')
               input#endDate.short(type='text, name='endDate')
               button#setStartDate.btn(onclick='setTime();') Set Visible Dates
-    .row
-      .span12#mytimelinewrapper(role='navigation')
-        a.leftarrow(href='javascript:void(0)', title='Move Backwards in Time', onClick='moveTimeline(-0.2);')
-        a.rightarrow(href='javascript:void(0)', title='Move Forward in Time', onClick='moveTimeline(0.2);')
+        #mytimelinewrapper(role='navigation')
+          a.leftarrow(href='javascript:void(0)', title='Move Backwards in Time', onClick='moveTimeline(-0.2);')
+          a.rightarrow(href='javascript:void(0)', title='Move Forward in Time', onClick='moveTimeline(0.2);')
 
-        #mytimeline
+          #mytimeline
 
-        #slider(role='slider')
-          #slider-range
+          #slider(role='slider')
+            #slider-range
 
   #modalbackdrop
             

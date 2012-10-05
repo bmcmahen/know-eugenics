@@ -27,7 +27,14 @@ fieldset {
 	border:  0px;
 	margin:  0px;
 	padding: 0px 0px 2px;
-	float: right;
+}
+
+fieldset button.btn {
+  float: none;
+}
+
+fieldset input.short {
+  margin: 0px 5px 0px 5px;
 }
 
 legend {
@@ -50,6 +57,7 @@ margin-left: 5px;
 
 #mytimelinewrapper {
 	position: relative;
+    margin: 0px;
 }
 
 a.leftarrow{
@@ -431,13 +439,17 @@ background: url(graphics/play.png) no-repeat center;
 
 /* @group inputs */
 
+.fullscreen ul.timeline-controls {
+  padding-right: 40px;
+}
+
 ul.timeline-controls {
   float: right;
   margin: 0px;
 }
 
 ul.timeline-controls li {
-  display: inline;
+  display: inline-block;
 }
 
 li.vertical-divider {

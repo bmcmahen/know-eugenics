@@ -1,7 +1,14 @@
 #flipcard-toolbar {
   height: 30px;
+  display: inline;
+  float: right;
   padding-bottom: 8px;
 }
+
+.fullscreen #flipcard-toolbar {
+  padding-right: 40px;
+}
+
 #flipcard-search {
   margin: 5px;
   float: right;

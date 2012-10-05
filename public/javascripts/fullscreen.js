@@ -13,7 +13,7 @@ $(document).ready(function() {
             $(e.currentTarget).text('(Exit Full Screen)')
             $app.addClass('fullscreen');
             $('#modalbackdrop').addClass('open');
-            timelineSize($app.width() - 40, $app.height() - 70)
+            timelineSize($app.width() - 40, $app.height() - 110)
          }
       })
 

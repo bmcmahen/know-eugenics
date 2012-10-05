@@ -3,6 +3,51 @@
   height: 600px;
   display: inline-block;
 }
+#jmpress h2 {
+  font: 120px HelveticaNeue, Helvetica, Ariel, Sans-serif;
+  font-weight: 100;
+}
+#jmpress .mainpage {
+  position: relative;
+}
+#jmpress .mainpage span {
+  font-size: 50px;
+}
+#jmpress .mainpage .one {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#jmpress .mainpage .two {
+  position: absolute;
+  top: 300px;
+  left: 400px;
+}
+#jmpress .mainpage .three {
+  position: absolute;
+  top: 0px;
+  left: 400px;
+}
+#jmpress .mainpage .four {
+  position: absolute;
+  top: -300px;
+  left: 400px;
+}
+#jmpress .mainpage .five {
+  position: absolute;
+  top: -300px;
+  right: 400px;
+}
+#jmpress .mainpage .six {
+  position: absolute;
+  top: 0px;
+  right: 400px;
+}
+#jmpress .mainpage .seven {
+  position: absolute;
+  top: 300px;
+  right: 400px;
+}
 .ui-widget-content {
   border: 1px solid #aaa;
   background: #eee;
