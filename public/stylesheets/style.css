@@ -129,7 +129,7 @@ img.logo {
   height: 25px;
 }
 #sub-header {
-  background-image: url("/extra_backgrounds/noisy_grid_light.png");
+  background-image: url("/extra_backgrounds/noisy_grid.png");
   border-bottom: 1px solid #bbb;
 }
 #sub-header div.prod {
@@ -189,7 +189,7 @@ img.logo {
  */
 body {
   font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-image: url("/shattered.png");
+  background-image: url("/extra_backgrounds/body_back_cropped.jpg");
   margin: 0;
   padding-top: 40px;
   padding-bottom: 75px;
