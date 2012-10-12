@@ -59,23 +59,41 @@ $(function() {
 
 			model: Browser.Card,
 
-			filterCards: function(field, query) {
+			filterCards: function(query, field) {
+
+				var filtered, modelsToHide; 
 
 				if (this.hidden) this.showHiddenModels();
 
-				var re = new RegExp(query, "i");
-				var filtered = this.filter(function(card) {
-					return re.test(card.get(field));
-				});
+				console.log(field)
+
+				if (typeof field != 'undefined') {
+					var re = new RegExp(query, "i");
+					filtered = this.filter(function(card) {
+						return re.test(card.get(field));
+					});
+				} else {
+					filtered = this.filter(function(card) {
+						var field = card.get('tags');
+						return _.contains(field, query);
+					})
+				}
 
 
 				if (_.isUndefined(this.originalModels)) {
 					this.originalModels = new Browser.Cards(this.models);
 				}
 
-				var modelsToHide = this.reject(function(card) {
-					return re.test(card.get(field));
-				});
+
+				if (typeof field != 'undefined'){
+					modelsToHide = this.reject(function(card) {
+						return re.test(card.get(field));
+					});
+				} else {
+					modelsToHide = this.reject(function(card){
+						return _.contains(card.get('tags'), query)
+					});
+				}
 
 				this.reset(filtered);
 				this.filtered = true;
@@ -202,6 +220,12 @@ $(function() {
 			// Sets comparator, activates it, and determines location.
 			sortModels: function(field) {
 				this.comparator = function(model) {
+					// splits datestring and returns first digits
+					if (field === 'dates') {
+						var string = model.get(field);
+						var dateArray = string.split(/-/);
+						return dateArray[0];
+					}
 					return model.get(field);
 				};
 				this.sort().determineLocation();
@@ -349,7 +373,7 @@ $(function() {
 				var _events = {};
 
 				_events[ 'keyup ' + Browser.options.searchField ] = 'searchCards';
-				_events[ 'click ' + Browser.options.filterClass ] = 'filterCards';
+				_events[ 'change ' + Browser.options.filterClass ] = 'filterCards';
 				_events[ 'click ' + Browser.options.sortClass ] = 'sortCards';
 
 				return _events;
@@ -357,14 +381,13 @@ $(function() {
 			
 			filterCards: function(event) {
 				event.preventDefault();
-
-				var filterField = $(event.target).data('filter-category');
+				var filterField = $(Browser.options.filterClass + ' :selected').val()
 
 				if (filterField === "all") {
 					this.collection.showHiddenModels();
 					this.collection.determineLocation();
 				}
-				else this.collection.filterCards("category", filterField);
+				else this.collection.filterCards(filterField);
 			},
 			
 			sortCards: function(event) {
@@ -379,7 +402,7 @@ $(function() {
 				event.preventDefault();
 
 				var query = $(Browser.options.searchField).val();
-				this.collection.filterCards("title", query);
+				this.collection.filterCards(query, 'name');
 			}
 		});
 

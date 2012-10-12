@@ -15,7 +15,7 @@
 
 .highslide-caption p,
 .highslide-maincontent p {
-  color: white;
+  color: #333;
 }
 
 .highslide-maincontent a:hover {
@@ -219,6 +219,14 @@ div.timeline-event-range {
 
 div.timeline-event-range:hover { 
 	background-color: #e3c8bf;
+}
+
+div.timeline-event-range:hover div.timeline-event-content {
+  overflow: visible;
+}
+
+div.timeline-event-range:hover div.timeline-event-content p {
+  background: #ddd;
 }
 
 

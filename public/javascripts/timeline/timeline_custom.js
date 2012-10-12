@@ -14,8 +14,8 @@ var data;
 var vis; // timeline visualizer variable
 var startDate = 1820;
 var endDate = 2055;
-var visiblefirstdate = 1860;
-var visiblelastdate = 1880;
+var visiblefirstdate = 1905;
+var visiblelastdate = 1920;
 
 
 var json = [{
@@ -56,7 +56,24 @@ var json = [{
   description: 'May 16, 1883. Francis Galton coins the term “eugenics.” He details the concept in his book Inquiries into Human Faculty and its Development, and recommends that individuals from families that rank highly in his merit system be encouraged to marry early and given incentives to have children. He also condemned late marriages within this same group as “dysgenic,” or disadvantageous to the human species.',
   type: 'text',
   category: ['science']
-},{
+},
+{
+  name: 'Indiana Passes Eugenics-based Compulsory Sterilization Law',
+  startDate: '1907',
+  endDate: '1921',
+  description: 'Indiana passed the first eugenics-based compulsory sterilization law in the world, setting an example for the thirty U.S. states that would follow. The law was overturned by the Indiana Supreme Court in 1921.',
+  type: 'text',
+  category: ['legislation', 'politics']
+},
+{
+  name: 'California Introduces sterilization laws',
+  startDate: '1909',
+  endDate: '1964',
+  description: 'Between 1909 and 1964, more than 20,000 people were sterilized.',
+  type: 'text',
+  category: ['legislation', 'politics']
+},
+{
   name: 'Alberta Hospital Ponoka Opens.',
   startDate: '1911',
   description: 'Alberta Hospital Ponoka opens. This institutions will ultimately be responsible for approximately 60% of cases considered by the Alberta Eugenics board.',
@@ -89,7 +106,24 @@ endDate: '1935-8-22',
 description: 'The United Farmers of Alberta (UFA) hold power in the Alberta Legislature.',
 type: 'text',
 category: ['politics', 'organizations', 'eugenics in canada']
-}, {
+},
+ {
+  name: 'Sterilization laws introduced in Virginia after Buck v. Bell',
+  startDate: '1927',
+  endDate: '1974',
+  description: 'Sterilization rates under eugenic laws in the United States climbed from 1927 until Skinner v. Oklahoma, 316 U.S. 535 (1942). While Skinner v. Oklahoma did not specifically overturn Buck v. Bell, it created enough of a legal quandary to discourage many sterilizations. By 1963, sterilization laws were almost wholly out of use, though some remained officially on the books for many years. Virginia"s state sterilization law was repealed in 1974.',
+  type: 'text',
+  category: ['politics', 'legislation']
+},
+{
+  name: 'Nazi Germany introduces Law for Prevention of Hereditarily Diseased Offspring',
+  startDate: '1933-07-14',
+  endDate: '1939',
+  description: 'A statue in Nazy Germany which allowed for the compulsory sterilisation of any citizen who in opinion of a "Genetic Health Court" suffered from a list of alleged genetic disorders, many of which were not, in fact, genetic. The law was largely suspended in 1939.',
+  type: 'text',
+  category: ['politics', 'legislation']
+},
+{
 name: 'The Alberta Social Credit Party governs Alberta.',
 startDate: '1935-8-23',
 endDate: '1971-8-30',
@@ -129,7 +163,15 @@ category: ['politics', 'organizations', 'eugenics in canada']
   description: 'The first Amendment to the Sexual Sterilization Act of Alberta passes in the Alberta Legislature. This amendment was proposed by Dr. W.W. Cross, Social Credit Minister of Health, to address criticism that the Act was too restrictive in its original form. To amend these concerns, a distinction was made between psychotic persons and mentally defective persons. The criterion for sterilization was extended to include the risk of mental injury to the patient or progeny, in addition to cases determined to derive from genetic defect, as grounds for sterilization. Furthermore, consent of the person to be sterilized, or of their spouse, parent, guardian, or the Minister, was only to be required the case of psychotic persons. The exception from civil action was also extended to include both persons taking part in surgical operations and persons in charge of mental institutions referring patients to the Alberta Eugenics Board.',
   type: 'text',
   category: ['legislation', 'politics', 'eugenics in canada']
-}, {
+}, 
+{
+  name: 'Sweden Introduces Sterilization Laws.',
+  startDate: '1934',
+  endDate: '1976',
+  description: 'Between 1976 60,000 Swedish women were sterilized',
+  type: 'text',
+  category: ['politics', 'legislation']
+},{
   name: 'Adolf Hitler Enacts Action T-4',
   startDate: '1939-9-1',
   description: 'September 1, 1939. Adolf Hitler authorizes a program of euthanasia, primarily aimed at mentally or physically “incurable” persons in state, private, or church-run institutions. This follows a mass-killing of children under three with mental “defects,” heritable diseases and deformities in May of 1939. Action T-4 targeted both children and adults, resulting in the extermination of approximately 275,000 people by methods including medications, starvation and gas chambers.',
@@ -194,51 +236,10 @@ category: ['politics', 'organizations', 'eugenics in canada']
   startDate: '2011-10-1',
   type: 'video',
   m4v: '/timeline/AlbertaEugenicsAwarenessWeek2011.mp4',
-  imageThumb: '/timeline/AlbertaEugenicsAwarenessWeekThumb.jpg'
+  imageThumb: '/timeline/AlbertaEugenicsAwarenessWeekThumb.jpg',
+  thumbWidth: 400,
+  thumbHeight: 300
 }]
-
-// builds a JSON object out of the DOM to populate the timeline. 
-
-// var json = [{
-//   name: "Gregor Mendel Publishes His Paper on Heredity",
-//   startDate: "1866-2-20",
-//   description: 'Gregor Mendel, an Augustinian monk, publishes his paper, "Versuche über Pflanzenhybriden" ("Experiments on Plant Hybridization"), containing his findings on heredity in the journal Proceedings of the Natural History Society of Brunn. These findings, which demonstrate that inheritance follows particular laws, emerged from years of observations breeding pea plants at the experimental garden of the Augustinian Abbey of St. Thomas in Brno.',
-//   type: 'text'
-// },{
-//   name: "Francis Galton Publishes <em>Hereditary Genius.</em>",
-//   startDate: "1869",
-//   description: 'Francis Galton publishes his influential book Hereditary Genius. Within it, he attempts to understand the heritability of human intelligence from a social sciences perspective. This volume proved a cornerstone of the nascent eugenics movement.',
-//   type: 'text'
-// },
-// {
-//   name: "Gregor Mendel Publishes His Paper on Heredity",
-//   startDate: "1866-2-20",
-//   description: 'Gregor Mendel, an Augustinian monk, publishes his paper, "Versuche über Pflanzenhybriden" ("Experiments on Plant Hybridization"), containing his findings on heredity in the journal Proceedings of the Natural History Society of Brunn. These findings, which demonstrate that inheritance follows particular laws, emerged from years of observations breeding pea plants at the experimental garden of the Augustinian Abbey of St. Thomas in Brno.',
-//   type: 'text'
-// },
-// {
-//   name: "Gregor Mendel Publishes His Paper on Heredity",
-//   startDate: "1866-2-20",
-//   endDate: "1934",
-//   description: 'Gregor Mendel, an Augustinian monk, publishes his paper, "Versuche über Pflanzenhybriden" ("Experiments on Plant Hybridization"), containing his findings on heredity in the journal Proceedings of the Natural History Society of Brunn. These findings, which demonstrate that inheritance follows particular laws, emerged from years of observations breeding pea plants at the experimental garden of the Augustinian Abbey of St. Thomas in Brno.',
-//   type: 'text'
-// },
-//  {
-// 	name: "Charles Darwin Publishes <em> The Descent of Man </em>",
-// 	type: 'image',
-// 	startDate: "1871",
-// 	image: "/images/timeline/descentofman_large.jpg",
-// 	imageThumb: "/images/timeline/descentofman_thumb.jpg",
-// 	description: 'Charles Darwin expands on evolutionary theory in his book The Descent of Man, and Selection in Relation to Sex to directly follow the concepts introduced in On the Origin of Species. In this volume, he applies his theories to human evolution and discusses concepts related to human "races," sexual differentiation and the relation of his evolutionary theory to human society. Most significantly, he discusses medical advances that allow "the weak" to reproduce, and cautions that reason (ie. disallowing their reproduction) should not replace sympathy.'
-// },{
-// 	name: "Test Video",
-// 	type: 'video',
-// 	startDate: '1900',
-// 	m4v: "http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v",
-// 	webm: "http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm",
-// 	imageThumb: "images/test_video_thumb.png"
-// }];
-
 
 
 /* 
@@ -300,11 +301,9 @@ function parseJSON(json){
  */
 function filterData(category) {
 
-  console.log('category to search', category)
   if (category === false) return parseJSON(json)
 
   var filtered =_.filter(json, function(entry, index){
-    console.log(entry)
     if (_.contains(entry.category, category)) return true
   })
 
@@ -337,7 +336,7 @@ function drawVisualization() { // Create and populate a data table.
 	links.events.addListener(vis, 'rangechange', onrangechange);
 
 	// Draw our timeline with the created data and options 
-	vis.draw(data, options);
+	vis.draw(filterData('eugenics in canada'), options);
 
 	//set the divs to the proper starting dates
 	document.getElementById('startDate').value = dateToString(vis.start);

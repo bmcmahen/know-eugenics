@@ -39,11 +39,11 @@ perspective:600px;
 -o-transform:translate3d(0,0,0) scale3d(1,1,1);
 -ms-transform:translate3d(0,0,0) scale3d(1,1,1);
 transform:translate3d(0,0,0) scale3d(1,1,1);
--webkit-transition-property: all;
+-webkit-transition-property: -webkit-transform, top, left, opacity;
 -moz-transition-property: all;
 -o-transition-property: all;
 -ms-transition-property: all;
-transition-property: all;
+transition-property: -webkit-transform, top, left;
 -webkit-transform-style:preserve-3d;
 -moz-transform-style:preserve-3d;
 -o-transform-style:preserve-3d;
@@ -64,7 +64,8 @@ z-index:1000
 .card .front,.card .back {
   border-radius: 4px; 
 background:#fff;
-background: rgba(255,255,255,0.6);
+background: rgba(255,255,255,1);
+border: 1px solid #bbb;
 width:170px;
 height:280px;
 cursor:pointer;
@@ -122,6 +123,17 @@ transform:rotateY(180deg)
 transform:rotateY(0)
 }
 
+ .back p {
+  line-height: 15px;
+}
+
+.quotes {
+  max-height: 260px;
+  -webkit-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .card img {
 float:left;
 max-height:2005px;
@@ -135,10 +147,19 @@ text-align:left
 }
 
 .caption p {
-margin: 10px 0px 0px 0px;
+margin: 0px 0px 0px 0px;
+line-height: 15px;
 white-space:nowrap;
 overflow:hidden;
 text-overflow:ellipsis;
+}
+
+.caption p.name {
+  margin-top: 3px;
+}
+
+.caption p.blurb {
+  font-size: 10px;
 }
 
 .minimize {
@@ -152,4 +173,9 @@ filter:alpha(opacity=0);
 transform:scale3d(.001,.001,1);
 z-index:1;
 pointer-events:none
+}
+
+select {
+  font: 16px Helvetica, Arial, sans-serif;
+  margin: 1px;
 }

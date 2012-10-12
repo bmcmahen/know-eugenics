@@ -27,10 +27,9 @@ block content
         ul.timeline-controls
           li
             select.timeline-filter#timeline-filter
-              option All Categories
-              optgroup label='Geography'
-                option Eugenics in Canada
-                option University of Alberta
+              option Eugenics in Canada
+              optgroup label='All'
+                option All Categories
               optgroup label='Type'
                 option Art
                 option Law
@@ -41,7 +40,7 @@ block content
                 option Science
           li.vertical-divider |
           li
-            fieldset(title='for the timeline-date-range')
+            fieldset(title='for the timeline-date-range', aria-live='polite')
               label(for='startDate')
               input#startDate.short(type='text', name='startDate')
               label(for='endDate')
@@ -85,7 +84,7 @@ block content
 
     script(type='text/template', id='timeline-video').
       <div class="vidwrapper" m4v="<%= m4v %>">
-             <img src="<%= imageThumb %>" alt="Click to Play Video"> 
+             <img src="<%= imageThumb %>" alt="Click to Play Video" style='height: <%= thumbHeight %>px; width: <%= thumbWidth %>px;'> 
              <span class='caption'> <%= name %> </span>
              <div class="vidplay"></div>
        </div>   
